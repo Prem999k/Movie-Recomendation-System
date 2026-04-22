@@ -8,8 +8,20 @@ warnings.filterwarnings("ignore")
 # =============================
 # LOAD DATA
 # =============================
-df = pickle.load(open("df.pkl", "rb"))
-tfidf_matrix = pickle.load(open("tfidf_matrix.pkl", "rb"))
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+@st.cache_data
+def load_data():
+    df = pd.read_csv("movies_metadata.csv").head(5000)
+    df = df[['title', 'overview']].dropna()
+
+    tfidf = TfidfVectorizer(stop_words='english', max_features=3000)
+    tfidf_matrix = tfidf.fit_transform(df['overview'])
+
+    return df, tfidf_matrix
+
+df, tfidf_matrix = load_data()
 
 indices = pd.Series(df.index, index=df['title']).drop_duplicates()
 
