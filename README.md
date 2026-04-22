@@ -8,7 +8,7 @@ It suggests similar movies based on content like overview, genre, and tagline.
 # 🎬 Movie Recommendation System
 
 ## 🌐 Live Demo
-🔗 [Click here to use the app]([https://your-streamlit-link.streamlit.app](https://movie-recomendation-system-premkumark.streamlit.app/))
+🔗 https://your-streamlit-link.streamlit.app](https://movie-recomendation-system-premkumark.streamlit.app/
 
 ## 📌 Overview
 This project is a Movie Recommendation System...
